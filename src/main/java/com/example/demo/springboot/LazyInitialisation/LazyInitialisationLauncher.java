@@ -1,4 +1,4 @@
-package com.example.demo.springboot.LazyInitialisation;
+package com.example.demo.springboot.lazyInitialisation;
 
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.annotation.ComponentScan;
