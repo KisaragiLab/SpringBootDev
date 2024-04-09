@@ -1,8 +1,10 @@
-package com.example.demo.springboot.BuisinessCalcService;
+package com.example.demo.springboot.buisinessCalcService;
 
-import org.springframework.stereotype.Component;
+// import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
 
-@Component
+// @Component
+@Repository
 public class MySqlDataService implements DataService {
 
     @Override

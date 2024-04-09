@@ -1,10 +1,12 @@
-package com.example.demo.springboot.BuisinessCalcService;
+package com.example.demo.springboot.buisinessCalcService;
 
 import java.util.Arrays;
 
-import org.springframework.stereotype.Component;
+// import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
-@Component
+// @Component
+@Service
 public class BusinessCalcService {
 
     private DataService dataService;

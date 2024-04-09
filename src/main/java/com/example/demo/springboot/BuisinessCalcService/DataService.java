@@ -1,4 +1,4 @@
-package com.example.demo.springboot.BuisinessCalcService;
+package com.example.demo.springboot.buisinessCalcService;
 
 public interface DataService {
     int[] retrieveData();

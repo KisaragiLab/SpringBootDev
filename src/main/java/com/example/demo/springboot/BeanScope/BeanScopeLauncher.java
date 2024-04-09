@@ -1,4 +1,4 @@
-package com.example.demo.springboot.BeanScope;
+package com.example.demo.springboot.beanScope;
 
 import org.springframework.beans.factory.config.ConfigurableBeanFactory;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
