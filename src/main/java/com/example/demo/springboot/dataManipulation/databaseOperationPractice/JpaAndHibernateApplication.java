@@ -1,4 +1,4 @@
-package com.example.demo.springboot.webDev.jdbc;
+package com.example.demo.springboot.dataManipulation.databaseOperationPractice;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

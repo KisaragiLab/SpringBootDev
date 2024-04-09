@@ -1,11 +1,11 @@
-package com.example.demo.springboot.webDev.jdbc;
+package com.example.demo.springboot.dataManipulation.databaseOperationPractice;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
-import com.example.demo.springboot.webDev.Course;
+import com.example.demo.springboot.dataManipulation.Course;
 
 @Repository
 public class CourseJdbcRepository {

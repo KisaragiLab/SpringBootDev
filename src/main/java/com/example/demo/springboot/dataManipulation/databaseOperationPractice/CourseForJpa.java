@@ -1,15 +1,19 @@
-package com.example.demo.springboot.webDev;
+package com.example.demo.springboot.dataManipulation.databaseOperationPractice;
 
-public class Course {
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
 
-    private long id;
+@Entity
+public class CourseForJpa {
+
+    @Id private long id;
     private String courseName;
     private String author;
 
-    public Course() {
+    public CourseForJpa() {
     }
 
-    public Course(long id, String courseName, String author) {
+    public CourseForJpa(long id, String courseName, String author) {
         super();
         this.id = id;
         this.courseName = courseName;

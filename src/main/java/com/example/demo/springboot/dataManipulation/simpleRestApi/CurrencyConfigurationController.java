@@ -1,4 +1,4 @@
-package com.example.demo.springboot.webDev;
+package com.example.demo.springboot.dataManipulation.simpleRestApi;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;

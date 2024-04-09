@@ -5,3 +5,11 @@ create table Course
     author varchar(255) not null,
     primary key (id)
 );
+
+create table Course_For_Jpa
+(
+    id bigint not null,
+    courseName varchar(255) not null,
+    author varchar(255) not null,
+    primary key (id)
+);

@@ -1,4 +1,4 @@
-package com.example.demo.springboot.webDev;
+package com.example.demo.springboot.dataManipulation.simpleRestApi;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;
