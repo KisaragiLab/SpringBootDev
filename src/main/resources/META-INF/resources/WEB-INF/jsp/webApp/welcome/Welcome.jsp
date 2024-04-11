@@ -7,7 +7,7 @@
     <body>
         <div class="container">
             <h1>Welcome, ${username}</h1>
-            Your password is ${password}
+            <a href="list-todos">Manage</a> your todos
         </div>
     </body>
 </html>
