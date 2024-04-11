@@ -1,4 +1,4 @@
-package com.kisaragiLab.demo.springboot.webApp.contollers.services;
+package com.kisaragiLab.demo.springboot.webApp.services;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
