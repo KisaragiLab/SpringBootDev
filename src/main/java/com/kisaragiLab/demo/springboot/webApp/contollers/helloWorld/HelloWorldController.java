@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Controller
 public class HelloWorldController {
 
-    private static String PREFIX = "/helloWorld";
+    private static String PREFIX = "/webApp/helloWorld";
 
     @RequestMapping("/hello")
     @ResponseBody

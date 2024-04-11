@@ -1,4 +1,4 @@
-package com.kisaragiLab.demo.springboot.webApp.contollers.login;
+package com.kisaragiLab.demo.springboot.webApp.contollers.services;
 
 import org.springframework.stereotype.Service;
 
