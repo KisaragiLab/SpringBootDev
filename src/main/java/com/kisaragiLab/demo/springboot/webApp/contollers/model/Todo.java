@@ -2,11 +2,13 @@ package com.kisaragiLab.demo.springboot.webApp.contollers.model;
 
 import java.time.LocalDate;
 
+import jakarta.validation.constraints.Size;
+
 public class Todo {
 
     private long id;
     private String username;
-    private String description;
+    @Size(min=10, message="Enter at least 1 character(s)") private String description;
     private LocalDate targetDate;
     private boolean done;
     
