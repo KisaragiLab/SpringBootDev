@@ -41,6 +41,12 @@ public class TodoController {
         return "redirect:add-todo";
     }
 
+    @RequestMapping(value="/delete-todo")
+    public String deleteTodo(@RequestParam int id) {
+        todoService.deleteById(id);
+        return "redirect:list-todos";
+    }
+
     @RequestMapping(value="/add-todo", method=RequestMethod.GET)
     public String newTodo(ModelMap model) {
         String username = (String)model.get("username");
