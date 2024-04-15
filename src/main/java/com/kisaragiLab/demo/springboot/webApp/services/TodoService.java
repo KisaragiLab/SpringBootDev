@@ -6,8 +6,8 @@ import java.util.List;
 
 import java.util.function.Predicate;
 import org.springframework.stereotype.Service;
-
 import com.kisaragiLab.demo.springboot.webApp.contollers.model.Todo;
+import jakarta.validation.Valid;
 
 @Service
 public class TodoService {
@@ -24,8 +24,18 @@ public class TodoService {
         return todos;
     }
 
+    public Todo findById(int id) {
+        Predicate<? super Todo> predicate = todo -> todo.getId() == id;
+        return todos.stream().filter(predicate).findFirst().get();
+    }
+
     public void addTodo(String username, String description, LocalDate targetDate, boolean done) {
         Todo todo = new Todo(++TODO_COUNT, username, description, targetDate, done); 
+        todos.add(todo);
+    }
+
+    public void updateTodo(@Valid Todo todo) {
+        deleteById((int)todo.getId());
         todos.add(todo);
     }
 
