@@ -43,7 +43,6 @@ public class LoginController {
         }
 
         model.put("username", username);
-        model.put("password", password);
 
         return "webApp/welcome/Welcome";
     }
