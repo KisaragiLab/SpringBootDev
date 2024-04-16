@@ -30,7 +30,7 @@ public class TodoController {
     private static String PREFIX = "/webApp/todo";
 
     @RequestMapping(value="/list-todos", method=RequestMethod.GET)
-    public String todo(ModelMap model) {
+    public String showTodoList(ModelMap model) {
         List<Todo> todos = todoService.findByUsername("Kisaragi Lab");
         model.addAttribute("todos", todos);
         return PREFIX + "/TodoList";
@@ -64,7 +64,7 @@ public class TodoController {
     }
 
     @RequestMapping(value="/add-todo", method=RequestMethod.GET)
-    public String showTodo(ModelMap model) {
+    public String showTodoDetails(ModelMap model) {
         String username = (String)model.get("username");
         Todo todo = new Todo(0, username, "Default description", LocalDate.now().plusDays(14), false);
         model.put("todo", todo);
@@ -72,12 +72,12 @@ public class TodoController {
     }
 
     @RequestMapping(value="/add-todo", method=RequestMethod.POST)
-    public String gotoTodoList(ModelMap model, @Valid Todo todo, BindingResult result) {
+    public String submitTodoDetails(ModelMap model, @Valid Todo todo, BindingResult result) {
         if(result.hasErrors()) {
             return PREFIX + "/TodoDetails";
         }
         String username = (String)model.get("username");
-        todoService.addTodo(username, todo.getDescription(), LocalDate.now().plusDays(15), false);
+        todoService.addTodo(username, todo.getDescription(), todo.getTargetDate(), false);
         return "redirect:list-todos";
     }
 
