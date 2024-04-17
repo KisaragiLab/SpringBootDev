@@ -19,7 +19,7 @@
             <form:errors path="targetDate" cssClass="text-warning"/>
         </fieldset>
 
-        <form:input type="hidden" path="done" />
+        <form:input type="hidden" path="completed" />
         <br>
         <input class="btn btn-success" type="submit" />
     </form:form>
