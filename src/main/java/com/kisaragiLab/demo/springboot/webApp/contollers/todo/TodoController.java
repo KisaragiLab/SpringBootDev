@@ -3,6 +3,8 @@ package com.kisaragiLab.demo.springboot.webApp.contollers.todo;
 import java.time.LocalDate;
 import java.util.List;
 
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
@@ -31,7 +33,8 @@ public class TodoController {
 
     @RequestMapping(value="/list-todos", method=RequestMethod.GET)
     public String showTodoList(ModelMap model) {
-        List<Todo> todos = todoService.findByUsername("Kisaragi Lab");
+        String username = getLoggedInUsername(model);
+        List<Todo> todos = todoService.findByUsername(username);
         model.addAttribute("todos", todos);
         return PREFIX + "/TodoList";
     }
@@ -65,7 +68,7 @@ public class TodoController {
 
     @RequestMapping(value="/add-todo", method=RequestMethod.GET)
     public String showTodoDetails(ModelMap model) {
-        String username = (String)model.get("username");
+        String username = getLoggedInUsername(model);
         Todo todo = new Todo(0, username, "Default description", LocalDate.now().plusDays(14), false);
         model.put("todo", todo);
         return PREFIX + "/TodoDetails";
@@ -76,9 +79,14 @@ public class TodoController {
         if(result.hasErrors()) {
             return PREFIX + "/TodoDetails";
         }
-        String username = (String)model.get("username");
+        String username = getLoggedInUsername(model);
         todoService.addTodo(username, todo.getDescription(), todo.getTargetDate(), false);
         return "redirect:list-todos";
+    }
+
+    private String getLoggedInUsername(ModelMap model) {
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        return authentication.getName();
     }
 
 }

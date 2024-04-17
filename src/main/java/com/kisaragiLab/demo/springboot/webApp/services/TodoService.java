@@ -15,13 +15,14 @@ public class TodoService {
     private static int TODO_COUNT = 0;
     private static List<Todo> todos = new ArrayList<Todo>();
     static {
-        todos.add(new Todo(++TODO_COUNT, "Kisaragi Lab", "AWS EC2", LocalDate.now().plusDays(14), false));
-        todos.add(new Todo(++TODO_COUNT, "Kisaragi Lab", "AWS Auto scaling and ELB", LocalDate.now().plusDays(28), false));
-        todos.add(new Todo(++TODO_COUNT, "Kisaragi Lab", "AWS Lamda", LocalDate.now().plusDays(50), false));
+        todos.add(new Todo(++TODO_COUNT, "KisaragiLab", "AWS EC2", LocalDate.now().plusDays(14), false));
+        todos.add(new Todo(++TODO_COUNT, "KisaragiLab", "AWS Auto scaling and ELB", LocalDate.now().plusDays(28), false));
+        todos.add(new Todo(++TODO_COUNT, "KisaragiLab", "AWS Lamda", LocalDate.now().plusDays(50), false));
     }
 
     public List<Todo> findByUsername(String username) {
-        return todos;
+        Predicate<? super Todo> predicate = todo -> todo.getUsername().equalsIgnoreCase(username);
+        return todos.stream().filter(predicate).toList();
     }
 
     public Todo findById(int id) {
