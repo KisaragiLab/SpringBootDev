@@ -6,7 +6,9 @@ import java.util.List;
 
 import java.util.function.Predicate;
 import org.springframework.stereotype.Service;
-import com.kisaragiLab.demo.springboot.webApp.contollers.model.Todo;
+
+import com.kisaragiLab.demo.springboot.webApp.model.Todo;
+
 import jakarta.validation.Valid;
 
 @Service

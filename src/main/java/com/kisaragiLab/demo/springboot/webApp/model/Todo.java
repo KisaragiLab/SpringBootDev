@@ -1,4 +1,4 @@
-package com.kisaragiLab.demo.springboot.webApp.contollers.model;
+package com.kisaragiLab.demo.springboot.webApp.model;
 
 import java.time.LocalDate;
 
@@ -23,6 +23,8 @@ public class Todo {
     
     private LocalDate targetDate;
     private boolean completed;
+
+    public Todo() {}
     
     public Todo(long id, String username, String description, LocalDate targetDate, boolean completed) {
         super();
